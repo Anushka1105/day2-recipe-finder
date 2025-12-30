@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="/" element={<App />} />
                 <Route path="/recipe/:id" element={<Detailed />} />
                 <Route path="/favorites" element={<Fav />} />
+                <Route path="/addRecipe" element={<AddRecipe />} />
             </Routes>
         </Router>
     </React.StrictMode>,

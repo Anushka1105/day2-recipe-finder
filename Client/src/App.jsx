@@ -65,10 +65,15 @@ function App() {
     const handleReadRecipe = (recipeId) => {
         navigate(`/recipe/${recipeId}`)
     }
+    const addRecipe = () => {
+        navigate(`/addRecipe`)
+    }
 
     const goToFavorites = () => {
         navigate('/favorites')
     }
+
+
 
     return (
         <div className="container">
@@ -78,7 +83,8 @@ function App() {
                         <h1>🍳 Recipe Finder</h1>
                     </div>
                     <div className='view'>
-                        <button onClick={fetchRecipes}>All Recipes</button>
+                        {/* <button onClick={fetchRecipes}>All Recipes</button> */}
+                        <button onClick={addRecipe}>Add Recipe</button>
                         <button onClick={goToFavorites}>Favourites</button>
                     </div>
                 </div>
