@@ -1,17 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 import Detailed from './Detailed.jsx'
-// import './Detailed.css'
+import './Detailed.css'
 import Fav from './Fav.jsx'
 import './Fav.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <App />
-        {/* <Detailed /> */}
-        {/* <Fav /> */}
-        
+        <Router>
+            <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/recipe/:id" element={<Detailed />} />
+                <Route path="/favorites" element={<Fav />} />
+            </Routes>
+        </Router>
     </React.StrictMode>,
 )
