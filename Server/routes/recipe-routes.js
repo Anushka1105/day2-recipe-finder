@@ -1,11 +1,11 @@
-const express = require("express");
-const {
+import express from 'express'
+import {
   getAllRecipes,
   getRecipeById,
   addRecipe,
   updateRecipe,
   deleteRecipe,
-} = require("../Controllers/recipe-controller");
+} from '../Controllers/recipe-controller.js'
 
 // create router
 const router = express.Router();
@@ -17,4 +17,4 @@ router.post("/add", addRecipe);
 router.put("/update/:id", updateRecipe);
 router.delete("/delete/:id", deleteRecipe);
 
-module.exports = router;
+export default router;

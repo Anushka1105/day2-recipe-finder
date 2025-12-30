@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-const recipeRouter = require('../routes/recipe-routes')
+import recipeRouter from '../routes/recipe-routes.js'
 
 const app = express()
 const PORT = 5000

@@ -1,4 +1,4 @@
-const Recipe = require("../models/recipe");
+import Recipe from '../models/recipe.js'
 
 //getall recipe
 const getAllRecipes = async (req, res) => {
@@ -129,10 +129,10 @@ const deleteRecipe = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   getAllRecipes,
   getRecipeById,
   addRecipe,
   updateRecipe,
   deleteRecipe,
-};
+}
