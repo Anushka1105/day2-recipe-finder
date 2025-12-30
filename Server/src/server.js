@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import recipeRouter from '../routes/recipe-routes.js'
+import connectToDB from '../database/db.js'
 
 const app = express()
 const PORT = 5000
@@ -9,8 +10,11 @@ const PORT = 5000
 // Middleware
 app.use(cors())
 app.use(express.json())
-app.use('/api',recipeRouter)
 
+connectToDB();
+
+
+app.use('/api',recipeRouter)
 
 
 

@@ -129,10 +129,57 @@ const deleteRecipe = async (req, res) => {
   }
 };
 
+
+//get recipe by name
+const getRecipeByName= async (req, res) => {
+     try {
+    const recipe = await Recipe.findOne({
+      name: { $regex: req.params.name, $options: 'i' } // case-insensitive
+    });
+    if (!recipe) {
+      return res.status(404).json({ message: 'Recipe not found' });
+    }
+    res.status(200).json(recipe);
+   } catch (error) {
+     res.status(500).json({ message: error.message });
+  }
+ }
+
+//add or update rating
+const AddratingById= async(req,res) =>{
+  try {
+    const { stars } = req.body;
+    const recipe = await Recipe.findById(req.params.id);
+
+    if (!recipe) {
+      return res.status(404).json({ message: "Recipe not found" });
+    }
+
+    if (stars < 1 || stars > 5) {
+      return res.status(400).json({ message: "Rating must be between 1 and 5" });
+    }
+    recipe.rating.totalStars += stars;
+    recipe.rating.totalUsers += 1;
+
+    await recipe.save();
+
+    res.status(200).json({
+      message: "Rating added successfully",
+      averageRating:
+        (recipe.rating.totalStars / recipe.rating.totalUsers).toFixed(1)
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 export {
   getAllRecipes,
   getRecipeById,
   addRecipe,
   updateRecipe,
   deleteRecipe,
+  getRecipeByName,
+  AddratingById,
+
 }

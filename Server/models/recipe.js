@@ -10,7 +10,7 @@ const recipeSchema = new mongoose.Schema({
     ingredients: {
         type: [String],
         required: true,
-        default:[],
+        default: [],
     },
     instructions: {
         type: String,
@@ -29,10 +29,16 @@ const recipeSchema = new mongoose.Schema({
         enum: ["breakfast", "lunch", "dinner", "dessert"],
     },
     rating: {
-        type: Number,
-        min: 1,
-        max: 5,
+        totalStars: {
+            type: Number,
+            default: 0
+        },
+        totalUsers: {
+            type: Number,
+            default: 0
+        }
     },
+
     comments: {
         type: [
             {
@@ -53,9 +59,7 @@ const recipeSchema = new mongoose.Schema({
             carbs: Number,
             fats: Number,
         }
-
     }
-
 });
 
 export default mongoose.model('Recipe', recipeSchema)
