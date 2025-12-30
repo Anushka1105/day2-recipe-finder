@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+.card {
+  margin: 50px;
+  height: 100%;
+  width: 90%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.recipe-img{
+  height: 170px;
+  width: 210px;
+  border: 2px solid black;
+  object-fit: cover;
+  object-position: center;
+}
+.card h3{
+  margin-top: 3px;
+  font-size: 18px;
+}
+.card p{
+  margin-top: 3px;
+  font-size: 15px;
+}

@@ -18,32 +18,143 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+.upper-section {
+  height: 300px;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1630278156268-12d56c2e135f?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 
+.nav{
+  height: 50px;
+  width: 100%;
+  padding:8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: green; */
+}
+.nav h1{
+  color:white;
+  font-size: 20px;
+}
+.view{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+button {
+  background-color: rgb(255, 123, 0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(255, 153, 0);
+}
+.search {
+  height: 40px;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0 5px;
+  background: white;
+  border: 1px solid gray;
+  font-size: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.input {
+  flex: 1;
+  height: 100%;
+  border: none;              
+  outline: none;
+  background: transparent;  
+  color: black;              
+  font-size: 16px;
+  padding: 0 8px;            
+  box-sizing: border-box;    
+}
+.search button{
+  background-color: rgb(255, 123, 0);
+  color: white;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.bottom-section{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card {
+  margin: 50px;
+  height: 100%;
+  width: 90%;
   background: white;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+}
+.recipe-img{
+  height: 170px;
+  width: 210px;
+  border: 2px solid black;
+  object-fit: cover;
+  object-position: center;
+}
+.card h3{
+  margin-top: 3px;
+  font-size: 18px;
+}
+.card p{
+  margin-top: 3px;
+  font-size: 15px;
+}
+.star{
+height: 16px;
+width: 15px;
 }
 
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
+.fav{
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-button:hover {
-  background-color: #0056b3;
+.fav button{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 input, textarea {
   width: 100%;
